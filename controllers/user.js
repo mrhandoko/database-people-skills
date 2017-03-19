@@ -40,8 +40,7 @@ User.updateUser = (req, res, next) => {
 }
 
 User.addUserSkill = (req, res, next) => {
-  Model.update({ _id: req.params.id},
-    {$push: {skill: {SkillId: req.body.skill, score: req.body.score}}})
+  Model.update({ _id: req.params.id}, { $push: {skill: {SkillId: req.body.skill, score: req.body.score}}})
     .then((data) => {
       res.send(data)
     })
